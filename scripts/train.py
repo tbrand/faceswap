@@ -252,7 +252,9 @@ class Train():
             logger.info("R|  Press 'S' to save model weights immediately")
         logger.info("R|===================================================")
 
-        keypress = KBHit(is_gui=self.args.redirect_gui)
+        # keypress = KBHit(is_gui=self.args.redirect_gui)
+        # Force to ignore any keypresses to avoid 'ioctl error'.
+        keypress = KBHit(is_gui=True)
         err = False
         while True:
             try:
